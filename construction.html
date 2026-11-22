@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concrete Volume Calculator — CalcHub</title>
+    <meta
+      name="description"
+      content="Estimate concrete volume for slabs from length, width, and thickness."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">CalcHub</a>
+        <nav>
+          <a href="finance.html">Finance</a>
+          <a href="health.html">Health</a>
+          <a href="business.html">Business</a>
+          <a href="realestate.html">Real Estate</a>
+          <a href="construction.html">Construction</a>
+          <a href="math.html">Math</a>
+          <a href="date.html">Date</a>
+          <a href="converter.html">Converter</a>
+          <a href="food.html">Food</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="index.html" class="back-link">← All calculators</a>
+
+      <section class="calc-page">
+        <h1>Concrete Volume Calculator</h1>
+        <p class="intro">Estimate concrete needed for a rectangular slab.</p>
+
+        <div class="field">
+          <label for="length">Length (ft)</label>
+          <input
+            type="number"
+            id="length"
+            placeholder="10"
+            step="0.1"
+            min="0"
+          />
+        </div>
+        <div class="field">
+          <label for="width">Width (ft)</label>
+          <input type="number" id="width" placeholder="10" step="0.1" min="0" />
+        </div>
+        <div class="field">
+          <label for="thickness">Thickness (in)</label>
+          <input
+            type="number"
+            id="thickness"
+            placeholder="4"
+            step="0.1"
+            min="0"
+          />
+        </div>
+
+        <button class="btn" data-calc="calcConcrete">Calculate</button>
+        <button class="btn btn-secondary" data-reset>Reset</button>
+
+        <div class="notes">
+          <h2>Note</h2>
+          <p>Add 5–10% for waste and spillage. Results are estimates only.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> CalcHub. For informational purposes only.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/concrete.js"></script>
+  </body>
+</html>

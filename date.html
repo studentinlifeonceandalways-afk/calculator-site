@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator — CalcHub</title>
+    <meta
+      name="description"
+      content="Calculate exact age in years, months, and days from a birth date."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">CalcHub</a>
+        <nav>
+          <a href="finance.html">Finance</a>
+          <a href="health.html">Health</a>
+          <a href="business.html">Business</a>
+          <a href="realestate.html">Real Estate</a>
+          <a href="construction.html">Construction</a>
+          <a href="math.html">Math</a>
+          <a href="date.html">Date</a>
+          <a href="converter.html">Converter</a>
+          <a href="food.html">Food</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="index.html" class="back-link">← All calculators</a>
+
+      <section class="calc-page">
+        <h1>Age Calculator</h1>
+        <p class="intro">Calculate exact age from a birth date.</p>
+
+        <div class="field">
+          <label for="dob">Date of birth</label>
+          <input type="date" id="dob" />
+        </div>
+
+        <button class="btn" data-calc="calcAge">Calculate</button>
+        <button class="btn btn-secondary" data-reset>Reset</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> CalcHub. For informational purposes only.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/age.js"></script>
+  </body>
+</html>

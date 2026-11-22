@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Yield Calculator — CalcHub</title>
+    <meta
+      name="description"
+      content="Calculate gross and net rental yield for a property."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">CalcHub</a>
+        <nav>
+          <a href="finance.html">Finance</a>
+          <a href="health.html">Health</a>
+          <a href="business.html">Business</a>
+          <a href="realestate.html">Real Estate</a>
+          <a href="construction.html">Construction</a>
+          <a href="math.html">Math</a>
+          <a href="date.html">Date</a>
+          <a href="converter.html">Converter</a>
+          <a href="food.html">Food</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="index.html" class="back-link">← All calculators</a>
+
+      <section class="calc-page">
+        <h1>Rental Yield Calculator</h1>
+        <p class="intro">Calculate gross and net rental yield.</p>
+
+        <div class="field">
+          <label for="value">Property value ($)</label>
+          <input type="number" id="value" placeholder="350000" min="0" />
+        </div>
+        <div class="field">
+          <label for="rent">Annual rent ($)</label>
+          <input type="number" id="rent" placeholder="24000" min="0" />
+        </div>
+        <div class="field">
+          <label for="expenses">Annual expenses ($)</label>
+          <input type="number" id="expenses" placeholder="4000" min="0" />
+        </div>
+
+        <button class="btn" data-calc="calcYield">Calculate</button>
+        <button class="btn btn-secondary" data-reset>Reset</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> CalcHub. For informational purposes only.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/rental.js"></script>
+  </body>
+</html>

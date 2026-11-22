@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profit Margin Calculator — CalcHub</title>
+    <meta
+      name="description"
+      content="Calculate profit, profit margin, and markup from cost and selling price."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="logo">CalcHub</a>
+        <nav>
+          <a href="finance.html">Finance</a>
+          <a href="health.html">Health</a>
+          <a href="business.html">Business</a>
+          <a href="realestate.html">Real Estate</a>
+          <a href="construction.html">Construction</a>
+          <a href="math.html">Math</a>
+          <a href="date.html">Date</a>
+          <a href="converter.html">Converter</a>
+          <a href="food.html">Food</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="index.html" class="back-link">← All calculators</a>
+
+      <section class="calc-page">
+        <h1>Profit Margin Calculator</h1>
+        <p class="intro">
+          Find profit, margin, and markup from cost and selling price.
+        </p>
+
+        <div class="field">
+          <label for="cost">Cost ($)</label>
+          <input type="number" id="cost" placeholder="40" step="0.01" min="0" />
+        </div>
+        <div class="field">
+          <label for="price">Selling price ($)</label>
+          <input
+            type="number"
+            id="price"
+            placeholder="100"
+            step="0.01"
+            min="0"
+          />
+        </div>
+
+        <button class="btn" data-calc="calcProfit">Calculate</button>
+        <button class="btn btn-secondary" data-reset>Reset</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> CalcHub. For informational purposes only.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/profit.js"></script>
+  </body>
+</html>
