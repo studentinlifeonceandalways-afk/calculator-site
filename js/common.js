@@ -1,81 +1,107 @@
 // Common utilities shared across all calculators
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Set footer year
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+(function () {
+  'use strict';
 
-  // Attach calculate buttons
-  document.querySelectorAll("[data-calc]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const fn = window[btn.dataset.calc];
-      if (typeof fn === "function") {
-        try {
-          const result = fn();
-          showResult(btn, result);
-        } catch (err) {
-          showResult(btn, "Error: " + err.message, true);
+  // ---------- Helpers exposed globally ----------
+  window.num = function (id) {
+    var el = document.getElementById(id);
+    if (!el) throw new Error('Missing input element: #' + id);
+    var v = parseFloat(el.value);
+    if (isNaN(v)) throw new Error('Please enter a valid number for "' + id + '"');
+    return v;
+  };
+
+  window.money = function (n) {
+    return n.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 2
+    });
+  };
+
+  window.round = function (n, dp) {
+    var f = Math.pow(10, dp);
+    return Math.round(n * f) / f;
+  };
+
+  window.showResult = function (button, text, isError) {
+    var page = button.closest('.calc-page');
+    if (!page) return;
+    var result = page.querySelector('.result');
+    if (!result) {
+      result = document.createElement('div');
+      result.className = 'result';
+      // insert right after the buttons, before .notes
+      var notes = page.querySelector('.notes');
+      if (notes) page.insertBefore(result, notes);
+      else page.appendChild(result);
+    }
+    result.textContent = text;
+    result.classList.add('show');
+
+    if (isError) {
+      result.style.background = '#fef2f2';
+      result.style.borderColor = '#fecaca';
+      result.style.color = '#b91c1c';
+    } else {
+      result.style.background = '#ecfdf5';
+      result.style.borderColor = '#a7f3d0';
+      result.style.color = '#059669';
+    }
+  };
+
+  // ---------- Wiring ----------
+  function wire() {
+    // Footer year
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Calculate buttons
+    var calcButtons = document.querySelectorAll('[data-calc]');
+    calcButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var name = btn.getAttribute('data-calc');
+        var fn = window[name];
+        if (typeof fn !== 'function') {
+          showResult(btn, 'Error: calculator "' + name + '" is not loaded. Check that js/' + name.toLowerCase().replace('calc', '') + '.js is included.', true);
+          console.error('Missing global function:', name);
+          return;
         }
-      }
-    });
-  });
-
-  // Attach reset buttons
-  document.querySelectorAll("[data-reset]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const form = btn.closest(".calc-page");
-      form.querySelectorAll("input, select").forEach(function (el) {
-        if (el.type === "number") el.value = "";
-        else if (el.tagName === "SELECT") el.selectedIndex = 0;
-        else el.value = "";
+        try {
+          var result = fn();
+          showResult(btn, result, false);
+        } catch (err) {
+          console.error(err);
+          showResult(btn, 'Error: ' + err.message, true);
+        }
       });
-      const result = form.querySelector(".result");
-      if (result) {
-        result.classList.remove("show");
-        result.textContent = "";
-      }
     });
-  });
-});
 
-function showResult(button, text, isError) {
-  const page = button.closest(".calc-page");
-  let result = page.querySelector(".result");
-  if (!result) {
-    result = document.createElement("div");
-    result.className = "result";
-    page.appendChild(result);
+    // Reset buttons
+    var resetButtons = document.querySelectorAll('[data-reset]');
+    resetButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var page = btn.closest('.calc-page');
+        if (!page) return;
+        page.querySelectorAll('input, select').forEach(function (el) {
+          if (el.tagName === 'SELECT') el.selectedIndex = 0;
+          else el.value = '';
+        });
+        var result = page.querySelector('.result');
+        if (result) {
+          result.classList.remove('show');
+          result.textContent = '';
+        }
+      });
+    });
   }
-  result.textContent = text;
-  result.classList.add("show");
-  if (isError) {
-    result.style.background = "#fef2f2";
-    result.style.borderColor = "#fecaca";
-    result.style.color = "#b91c1c";
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wire);
   } else {
-    result.style.background = "#ecfdf5";
-    result.style.borderColor = "#a7f3d0";
-    result.style.color = "#059669";
+    wire(); // DOM already parsed
   }
-}
-
-function num(id) {
-  const el = document.getElementById(id);
-  if (!el) throw new Error("Missing input: " + id);
-  const v = parseFloat(el.value);
-  if (isNaN(v)) throw new Error('Please enter a valid number in "' + id + '"');
-  return v;
-}
-
-function money(n) {
-  return n.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 2,
-  });
-}
-
-function round(n, dp) {
-  const f = Math.pow(10, dp);
-  return Math.round(n * f) / f;
-}
+})();
