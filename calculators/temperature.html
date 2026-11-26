@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter — Celsius, Fahrenheit, Kelvin | CalcHub</title>
+  <meta name="description" content="Free temperature converter. Convert between Celsius, Fahrenheit, and Kelvin with exact formulas." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/temperature.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html" class="active">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../converter.html">Converter</a> <span>›</span>
+      <span>Temperature Converter</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Temperature Converter</h1>
+      <p class="intro">
+        Use this temperature converter to convert between Celsius, Fahrenheit, and Kelvin. Enter a
+        value and select the from and to units. Conversions use exact scientific definitions:
+        water freezes at 0 °C / 32 °F / 273.15 K and boils at 100 °C / 212 °F / 373.15 K at standard
+        pressure. Absolute zero is 0 K / −273.15 °C / −459.67 °F.
+      </p>
+
+      <div class="field">
+        <label for="value">Temperature value</label>
+        <input type="number" id="value" placeholder="100" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="from">From</label>
+        <select id="from">
+          <option value="c">Celsius (°C)</option>
+          <option value="f">Fahrenheit (°F)</option>
+          <option value="k">Kelvin (K)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="to">To</label>
+        <select id="to">
+          <option value="c">Celsius (°C)</option>
+          <option value="f" selected>Fahrenheit (°F)</option>
+          <option value="k">Kelvin (K)</option>
+        </select>
+      </div>
+
+      <button class="btn" data-calc="calcTemp">Convert</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>100 °C to °F:</strong></p>
+        <ul>
+          <li>Result: <strong>212 °F</strong></li>
+        </ul>
+        <p>The boiling point of water at standard pressure.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Values below absolute zero are not physically meaningful (below 0 K, −273.15 °C, −459.67 °F)</li>
+          <li>No unit rounding beyond the displayed precision</li>
+          <li>For scientific work requiring high precision, use standard reference tables</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>°F = (°C × 9/5) + 32</strong></p>
+        <p><strong>°C = (°F − 32) × 5/9</strong></p>
+        <p><strong>K = °C + 273.15</strong></p>
+        <p><strong>°C = K − 273.15</strong></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Why does Kelvin have no degree symbol?</h3>
+        <p>Kelvin is an absolute temperature scale, so "K" is a unit name rather than a degree.
+        Conventionally written as 273.15 K, not 273.15 °K.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is room temperature in each unit?</h3>
+        <p>About 20–22 °C, 68–72 °F, or 293–295 K.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I convert negative temperatures?</h3>
+        <p>Yes, but not below absolute zero (−273.15 °C, −459.67 °F, 0 K). The calculator will flag
+        clearly invalid values below those thresholds.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="concrete.html">Concrete Volume Calculator</a></li>
+          <li><a href="paint.html">Paint Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> SI base units and NIST reference on temperature scales.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/temperature.js"></script>
+</body>
+</html>
