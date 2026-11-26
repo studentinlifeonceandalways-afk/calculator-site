@@ -8,6 +8,5 @@ window.calcRecipe = function () {
 
   var factor = newServ / orig;
   var scaled = qty * factor;
-
   return 'Scaled quantity: ' + round(scaled, 2) + ' (factor ×' + round(factor, 3) + ')';
 };
