@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Concrete Volume Calculator — Slab Volume and Bag Count | CalcHub</title>
-  <meta name="description" content="Free concrete volume calculator. Estimate cubic feet, cubic yards, and 60lb/80lb bag counts for a rectangular concrete slab. Includes formula, example, and FAQs." />
+  <title>Construction Calculators — Concrete, Paint | CalcHub</title>
+  <meta name="description" content="Free construction calculators: concrete volume and paint quantity for slabs and interior walls." />
   <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/construction.html" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -17,7 +17,7 @@
         <a href="health.html">Health</a>
         <a href="business.html">Business</a>
         <a href="realestate.html">Real Estate</a>
-        <a href="construction.html">Construction</a>
+        <a href="construction.html" class="active">Construction</a>
         <a href="math.html">Math</a>
         <a href="date.html">Date</a>
         <a href="converter.html">Converter</a>
@@ -27,94 +27,20 @@
   </header>
 
   <main class="container">
-    <a href="index.html" class="back-link">← All calculators</a>
+    <section class="cat-header">
+      <h1>Construction Calculators</h1>
+      <p>Estimate materials for common construction and DIY jobs.</p>
+    </section>
 
-    <section class="calc-page">
-      <h1>Concrete Volume Calculator</h1>
-      <p class="intro">
-        Use this concrete calculator to estimate the volume of concrete needed for a rectangular slab
-        in cubic feet and cubic yards, plus the number of 60 lb or 80 lb pre-mixed bags. Enter the
-        length, width, and thickness of the slab. Add 5–10% for waste, spillage, and uneven subgrade
-        when ordering.
-      </p>
-
-      <div class="field">
-        <label for="length">Length (ft)</label>
-        <input type="number" id="length" placeholder="10" step="0.1" min="0" />
-      </div>
-      <div class="field">
-        <label for="width">Width (ft)</label>
-        <input type="number" id="width" placeholder="10" step="0.1" min="0" />
-      </div>
-      <div class="field">
-        <label for="thickness">Thickness (in)</label>
-        <input type="number" id="thickness" placeholder="4" step="0.1" min="0" />
-      </div>
-
-      <button class="btn" data-calc="calcConcrete">Calculate</button>
-      <button class="btn btn-secondary" data-reset>Reset</button>
-
-      <h2>Worked example</h2>
-      <div class="example-box">
-        <p><strong>10 ft × 10 ft slab at 4 inches thick:</strong></p>
-        <ul>
-          <li>Volume: <strong>33.33 cu ft</strong> (1.23 cu yd)</li>
-          <li>60 lb bags: <strong>75</strong></li>
-          <li>80 lb bags: <strong>56</strong></li>
-        </ul>
-        <p>With 10% waste, order about 37 cu ft or 83 × 60 lb bags.</p>
-      </div>
-
-      <h2>Assumptions and limitations</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Assumes a rectangular slab of uniform thickness</li>
-          <li>Bag yields: 60 lb ≈ 0.45 cu ft; 80 lb ≈ 0.60 cu ft</li>
-          <li>Does not include waste, spillage, or over-excavation — add 5–10%</li>
-          <li>Does not include reinforcement, footings, or formwork</li>
-        </ul>
-      </div>
-
-      <h2>How the calculation works</h2>
-      <div class="formula-box">
-        <p><strong>Volume (cu ft)</strong> = Length (ft) × Width (ft) × Thickness (ft)</p>
-        <p><strong>Volume (cu yd)</strong> = Volume (cu ft) ÷ 27</p>
-        <p><strong>Bags</strong> = Volume (cu ft) ÷ bag yield (0.45 or 0.60 cu ft)</p>
-        <p>Thickness in inches is divided by 12 to convert to feet.</p>
-      </div>
-
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>How much extra concrete should I order?</h3>
-        <p>Add 5–10% for typical slab work. Uneven subgrade, deep spots, or forms that bow can require
-        more. Running short mid-pour is far more costly than a small overage.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How many 80 lb bags are in a cubic yard?</h3>
-        <p>About 45 bags of 80 lb concrete per cubic yard (27 ÷ 0.60). For 60 lb bags, about 60 per
-        cubic yard.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Does this work for footings or columns?</h3>
-        <p>No. This calculator is for rectangular slabs. Footings and columns need their own volume
-        calculations based on their cross-section and depth.</p>
-      </div>
-
-      <div class="related">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="realestate.html">Rental Yield Calculator</a></li>
-          <li><a href="converter.html">Unit Converter</a></li>
-          <li><a href="math.html">Percentage Calculator</a></li>
-          <li><a href="finance.html">Mortgage Payment Calculator</a></li>
-        </ul>
-      </div>
-
-      <div class="meta">
-        <p><strong>Last updated:</strong> November 2026</p>
-        <p><strong>Sources:</strong> Standard concrete bag yield figures from major pre-mixed concrete manufacturers.</p>
-        <p>This calculator is for informational purposes only. Verify quantities with your supplier before ordering.</p>
-      </div>
+    <section class="grid">
+      <a class="card" href="calculators/concrete.html">
+        <h2>Concrete Volume Calculator</h2>
+        <p>Cubic feet, cubic yards, and 60/80 lb bag counts for a rectangular slab.</p>
+      </a>
+      <a class="card" href="calculators/paint.html">
+        <h2>Paint Calculator</h2>
+        <p>Wall area minus openings, plus gallons of paint needed for 1 or 2 coats.</p>
+      </a>
     </section>
   </main>
 
@@ -123,6 +49,5 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script src="js/concrete.js"></script>
 </body>
 </html>
