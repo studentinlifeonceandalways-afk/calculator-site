@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date Difference Calculator — Days, Weeks, Months Between Dates | CalcHub</title>
+  <meta name="description" content="Free date difference calculator. Days, weeks, months, and years between two dates." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/date-difference.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html" class="active">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../date.html">Date</a> <span>›</span>
+      <span>Date Difference Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Date Difference Calculator</h1>
+      <p class="intro">
+        Use this date difference calculator to find the number of days, weeks, months, and years
+        between two dates. It also shows the calendar difference in years, months, and days. Useful
+        for project timelines, contract terms, vacation planning, and deadline calculations.
+      </p>
+
+      <div class="field">
+        <label for="start">Start date</label>
+        <input type="date" id="start" />
+      </div>
+      <div class="field">
+        <label for="end">End date</label>
+        <input type="date" id="end" />
+      </div>
+
+      <button class="btn" data-calc="calcDateDiff">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>January 1, 2026 → December 31, 2026:</strong></p>
+        <ul>
+          <li>Days: <strong>364</strong></li>
+          <li>Weeks: <strong>52.0</strong></li>
+          <li>Calendar difference: <strong>0 years, 11 months, 30 days</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Uses the device's local time zone</li>
+          <li>Excludes the end date from the day count (difference between midnight of each date)</li>
+          <li>Calendar months and years account for leap years and month lengths</li>
+          <li>Order does not matter — the calculator swaps dates to return a positive result</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Days</strong> = floor((end − start) ÷ 86,400,000 ms)</p>
+        <p><strong>Weeks</strong> = Days ÷ 7</p>
+        <p><strong>Calendar difference</strong> = years, months, and days calculated from calendar
+        fields (handles leap years and month lengths)</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Does the calculator include the end date?</h3>
+        <p>No. It returns the difference between the two dates (end minus start), not inclusive day
+        count. Add 1 if you need the inclusive count.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does it handle leap years?</h3>
+        <p>Leap years are handled automatically because the calculation uses real calendar dates, not
+        a fixed 365-day year.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I calculate business days?</h3>
+        <p>Not with this version — it counts calendar days. For business days excluding weekends and
+        holidays, use a dedicated working-days calculator.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="age.html">Age Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="compound-interest.html">Compound Interest Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard Gregorian calendar arithmetic.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/date-difference.js"></script>
+</body>
+</html>
