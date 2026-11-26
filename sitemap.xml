@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/</loc></url>
+
+  <!-- Category hubs -->
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/finance.html</loc></url>
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/health.html</loc></url>
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/business.html</loc></url>
@@ -10,4 +13,20 @@
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/date.html</loc></url>
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/converter.html</loc></url>
   <url><loc>https://YOURUSERNAME.github.io/calculator-site/food.html</loc></url>
+
+  <!-- Individual calculators -->
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/mortgage.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/compound-interest.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/bmi.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/calorie.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/profit-margin.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/breakeven.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/rental-yield.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/rent-vs-buy.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/concrete.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/paint.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/percentage.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/age.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/unit-converter.html</loc></url>
+  <url><loc>https://YOURUSERNAME.github.io/calculator-site/calculators/recipe-scaler.html</loc></url>
 </urlset>
