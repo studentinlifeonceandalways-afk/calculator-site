@@ -1,28 +1,15 @@
-function calcConcrete() {
-  const L = num("length");
-  const W = num("width");
-  const T = num("thickness");
+window.calcConcrete = function () {
+  var L = num('length');
+  var W = num('width');
+  var T = num('thickness');
+  if (L <= 0 || W <= 0 || T <= 0) throw new Error('All dimensions must be greater than 0');
 
-  if (L <= 0 || W <= 0 || T <= 0)
-    throw new Error("All dimensions must be greater than 0");
+  var thicknessFt = T / 12;
+  var cubicFt = L * W * thicknessFt;
+  var cubicYards = cubicFt / 27;
+  var bags60 = Math.ceil(cubicFt / 0.45);
+  var bags80 = Math.ceil(cubicFt / 0.60);
 
-  const thicknessFt = T / 12;
-  const cubicFt = L * W * thicknessFt;
-  const cubicYards = cubicFt / 27;
-
-  // 60 lb bag ≈ 0.45 cu ft; 80 lb bag ≈ 0.60 cu ft
-  const bags60 = Math.ceil(cubicFt / 0.45);
-  const bags80 = Math.ceil(cubicFt / 0.6);
-
-  return (
-    "Volume: " +
-    round(cubicFt, 2) +
-    " cu ft (" +
-    round(cubicYards, 2) +
-    " cu yd) | " +
-    bags60 +
-    " × 60lb bags or " +
-    bags80 +
-    " × 80lb bags"
-  );
-}
+  return 'Volume: ' + round(cubicFt, 2) + ' cu ft (' + round(cubicYards, 2) + ' cu yd)' +
+         ' | ' + bags60 + ' × 60lb bags or ' + bags80 + ' × 80lb bags';
+};
