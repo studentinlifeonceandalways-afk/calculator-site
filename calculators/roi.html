@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Calculator — Return on Investment | CalcHub</title>
+  <meta name="description" content="Free ROI calculator. Calculate return on investment from initial cost, final value, and holding period, with annualized return." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/roi.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html" class="active">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../business.html">Business</a> <span>›</span>
+      <span>ROI Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>ROI Calculator</h1>
+      <p class="intro">
+        Use this ROI calculator to find the return on an investment from its initial cost, its final
+        value, and (optionally) how long you held it. ROI shows total return as a percentage of the
+        initial cost; annualized ROI converts that to a per-year rate so you can compare investments
+        with different holding periods. This is the simple return, not the time-weighted IRR.
+      </p>
+
+      <div class="field">
+        <label for="cost">Initial cost ($)</label>
+        <input type="number" id="cost" placeholder="1000" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="value">Final value ($)</label>
+        <input type="number" id="value" placeholder="1500" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="years">Holding period (years, optional)</label>
+        <input type="number" id="years" placeholder="2" min="0" step="0.1" />
+      </div>
+
+      <button class="btn" data-calc="calcROI">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>$1,000 cost, $1,500 final value after 2 years:</strong></p>
+        <ul>
+          <li>Net gain: <strong>$500</strong></li>
+          <li>Total ROI: <strong>50%</strong></li>
+          <li>Annualized ROI: <strong>22.47%</strong></li>
+        </ul>
+        <p>Annualized ROI uses the compound growth rate, not simple division, so it compares fairly
+        to other annual returns.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Does not include taxes, fees, or transaction costs — subtract from final value for net ROI</li>
+          <li>Assumes no interim cash flows (dividends, rent, distributions)</li>
+          <li>Annualized ROI is the CAGR (compound annual growth rate), not IRR</li>
+          <li>Requires holding period > 0 for annualized result; otherwise only total ROI is shown</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Net gain</strong> = Final value − Initial cost</p>
+        <p><strong>Total ROI (%)</strong> = (Net gain ÷ Initial cost) × 100</p>
+        <p><strong>Annualized ROI (%)</strong> = ((Final ÷ Initial)<sup>1/years</sup> − 1) × 100</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What's the difference between ROI and annualized ROI?</h3>
+        <p>ROI is total return over the holding period. Annualized ROI converts that to a per-year rate,
+        so a 50% return over 2 years (22.47% annualized) can be compared to a 30% return over 5 years
+        (5.39% annualized).</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is this different from IRR?</h3>
+        <p>IRR (internal rate of return) accounts for the timing of cash flows (dividends, partial
+        sales, additional investments). Simple ROI assumes a single initial outflow and one final
+        inflow.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should ROI be calculated before or after tax?</h3>
+        <p>Both are useful. Pre-tax ROI compares investment performance; after-tax ROI (net ROI) is
+        what you actually keep. Use after-tax figures for personal decisions.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="profit-margin.html">Profit Margin Calculator</a></li>
+          <li><a href="breakeven.html">Break-Even Calculator</a></li>
+          <li><a href="compound-interest.html">Compound Interest Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard return-on-investment and CAGR definitions.</p>
+        <p>This calculator is for informational purposes only and is not investment advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/roi.js"></script>
+</body>
+</html>
