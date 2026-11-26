@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BMI Calculator — Body Mass Index from Height and Weight | CalcHub</title>
-  <meta name="description" content="Free BMI calculator. Calculate body mass index from height and weight, see your category, and understand BMI limitations. Includes formula, example, and FAQs." />
+  <title>Health Calculators — BMI, Calories | CalcHub</title>
+  <meta name="description" content="Free health calculators: BMI and daily calorie (TDEE) estimates. Includes formulas, examples, and FAQs." />
   <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/health.html" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -14,7 +14,7 @@
       <a href="index.html" class="logo">CalcHub</a>
       <nav>
         <a href="finance.html">Finance</a>
-        <a href="health.html">Health</a>
+        <a href="health.html" class="active">Health</a>
         <a href="business.html">Business</a>
         <a href="realestate.html">Real Estate</a>
         <a href="construction.html">Construction</a>
@@ -27,100 +27,20 @@
   </header>
 
   <main class="container">
-    <a href="index.html" class="back-link">← All calculators</a>
+    <section class="cat-header">
+      <h1>Health Calculators</h1>
+      <p>Body metrics and daily calorie tools. Results are estimates, not medical advice.</p>
+    </section>
 
-    <section class="calc-page">
-      <h1>BMI Calculator</h1>
-      <p class="intro">
-        Use this BMI calculator to estimate your Body Mass Index from your height and weight in metric
-        units. BMI is a screening tool that compares your weight to a range considered healthy for your
-        height in adults 20 and older. It is not a diagnostic tool and does not measure body fat
-        directly, muscle mass, or distribution of fat.
-      </p>
-
-      <div class="field">
-        <label for="weight">Weight (kg)</label>
-        <input type="number" id="weight" placeholder="70" step="0.1" min="0" />
-      </div>
-      <div class="field">
-        <label for="height">Height (cm)</label>
-        <input type="number" id="height" placeholder="175" step="0.1" min="0" />
-      </div>
-
-      <button class="btn" data-calc="calcBMI">Calculate</button>
-      <button class="btn btn-secondary" data-reset>Reset</button>
-
-      <h2>Worked example</h2>
-      <div class="example-box">
-        <p><strong>70 kg at 175 cm:</strong></p>
-        <ul>
-          <li>BMI: <strong>22.9</strong></li>
-          <li>Category: <strong>Normal weight</strong></li>
-        </ul>
-        <p>A BMI of 22.9 falls in the healthy range (18.5–24.9) for adults.</p>
-      </div>
-
-      <h2>BMI categories for adults</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Underweight: below 18.5</li>
-          <li>Normal weight: 18.5 – 24.9</li>
-          <li>Overweight: 25.0 – 29.9</li>
-          <li>Obese: 30.0 and above</li>
-        </ul>
-      </div>
-
-      <h2>Assumptions and limitations</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Intended for adults 20 and older; not valid for children or teens</li>
-          <li>Does not distinguish muscle from fat; athletes may show high BMI with low body fat</li>
-          <li>Does not account for age, sex, ethnicity, or fat distribution</li>
-          <li>Not a substitute for medical advice or clinical assessment</li>
-        </ul>
-      </div>
-
-      <h2>How the calculation works</h2>
-      <div class="formula-box">
-        <p><strong>Formula:</strong> BMI = weight (kg) ÷ height (m)<sup>2</sup></p>
-        <p>Height in centimeters is divided by 100 to convert to meters before squaring.
-        This is the standard World Health Organization formula for adult BMI.</p>
-      </div>
-
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>Is BMI accurate for everyone?</h3>
-        <p>No. BMI is a population-level screening tool. It can misclassify muscular athletes as
-        overweight and may not reflect health risk accurately across different ethnic groups. It should
-        be used alongside other measures such as waist circumference and clinical assessment.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Should I use BMI for children?</h3>
-        <p>No. Children and teens require age- and sex-specific BMI percentile charts, not the adult
-        categories used here. Consult a pediatrician for child growth assessment.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What is a healthy BMI?</h3>
-        <p>For most adults, a BMI between 18.5 and 24.9 is considered normal weight. However, "healthy"
-        depends on individual factors including muscle mass, age, and medical history. Discuss your
-        results with a healthcare professional.</p>
-      </div>
-
-      <div class="related">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="food.html">Recipe Scaler</a></li>
-          <li><a href="converter.html">Unit Converter</a></li>
-          <li><a href="math.html">Percentage Calculator</a></li>
-          <li><a href="date.html">Age Calculator</a></li>
-        </ul>
-      </div>
-
-      <div class="meta">
-        <p><strong>Last updated:</strong> November 2026</p>
-        <p><strong>Sources:</strong> World Health Organization (WHO) BMI classification; CDC adult BMI guidance.</p>
-        <p>This calculator is for informational purposes only and is not medical advice. Consult a healthcare professional for diagnosis or treatment.</p>
-      </div>
+    <section class="grid">
+      <a class="card" href="calculators/bmi.html">
+        <h2>BMI Calculator</h2>
+        <p>Estimate Body Mass Index from height and weight with category and limitations.</p>
+      </a>
+      <a class="card" href="calculators/calorie.html">
+        <h2>Calorie (TDEE) Calculator</h2>
+        <p>Daily calorie needs using Mifflin-St Jeor and activity multiplier.</p>
+      </a>
     </section>
   </main>
 
@@ -129,6 +49,5 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script src="js/bmi.js"></script>
 </body>
 </html>
