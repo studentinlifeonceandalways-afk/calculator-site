@@ -1,6 +1,6 @@
-function calcPercent() {
-  const pct = num("pct");
-  const of = num("of");
-  const result = (pct / 100) * of;
-  return pct + "% of " + of + " = " + round(result, 4);
-}
+window.calcPercent = function () {
+  var pct = num('pct');
+  var of = num('of');
+  var result = (pct / 100) * of;
+  return pct + '% of ' + of + ' = ' + round(result, 4);
+};
