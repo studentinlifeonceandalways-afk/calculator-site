@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cap Rate Calculator — Capitalization Rate for Rental Property | CalcHub</title>
+  <meta name="description" content="Free cap rate calculator. Calculate capitalization rate from net operating income and property value, with formula and example." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/cap-rate.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html" class="active">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../realestate.html">Real Estate</a> <span>›</span>
+      <span>Cap Rate Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Cap Rate Calculator</h1>
+      <p class="intro">
+        Use this cap rate calculator to compute the capitalization rate of an income property from
+        its net operating income (NOI) and current market value (or purchase price). Cap rate is a
+        quick way to compare the yield of different properties independent of financing. Higher cap
+        rate usually means higher return but higher risk; lower cap rate often means a more stable,
+        lower-risk asset in a strong market.
+      </p>
+
+      <div class="field">
+        <label for="noi">Net operating income ($/year)</label>
+        <input type="number" id="noi" placeholder="24000" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="value">Property value ($)</label>
+        <input type="number" id="value" placeholder="400000" min="0" step="0.01" />
+      </div>
+
+      <button class="btn" data-calc="calcCapRate">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>NOI $24,000, property value $400,000:</strong></p>
+        <ul>
+          <li>Cap rate: <strong>6.00%</strong></li>
+        </ul>
+        <p>At the same NOI, a $500,000 purchase price would produce a 4.80% cap rate.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>NOI = gross rent − operating expenses (excludes mortgage, depreciation, and income tax)</li>
+          <li>Uses current value or purchase price, not loan amount</li>
+          <li>Does not account for capital expenditures, vacancy beyond what's in NOI, or appreciation</li>
+          <li>Cap rate is a snapshot; forward cap rate uses projected NOI and may differ</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Cap rate (%)</strong> = (NOI ÷ Property value) × 100</p>
+        <p>To compute NOI: gross rental income minus vacancy, property tax, insurance, maintenance,
+        management, and other operating costs. Exclude mortgage payments.</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is a good cap rate?</h3>
+        <p>It varies by market and asset class. Residential rentals often run 4–8%; commercial
+        properties 6–12%. Higher cap rates mean higher yield but often higher risk or slower-growth
+        markets. Compare to local comparables, not a single universal number.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is cap rate different from rental yield?</h3>
+        <p>Rental yield typically starts from gross rent; cap rate uses net operating income after
+        expenses. Cap rate is the standard metric for commercial property; gross yield is more common
+        for residential rentals.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should mortgage payments be in NOI?</h3>
+        <p>No. NOI is calculated before financing so cap rate is a property-level metric, independent
+        of how it's financed. Mortgage payments affect cash flow, not cap rate.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="rent-vs-buy.html">Rent vs Buy Calculator</a></li>
+          <li><a href="mortgage.html">Mortgage Payment Calculator</a></li>
+          <li><a href="roi.html">ROI Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard real estate capitalization rate definition (CCIM Institute).</p>
+        <p>This calculator is for informational purposes only and is not investment advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/cap-rate.js"></script>
+</body>
+</html>
