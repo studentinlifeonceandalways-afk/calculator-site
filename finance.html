@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mortgage Payment Calculator — Monthly Payment & Total Interest | CalcHub</title>
-  <meta name="description" content="Free mortgage payment calculator. Estimate monthly principal and interest, total interest paid, and total cost of a fixed-rate mortgage. Includes formula, example, and FAQs." />
+  <title>Finance Calculators — Mortgage, Compound Interest | CalcHub</title>
+  <meta name="description" content="Free finance calculators: mortgage payment and compound interest, each with formulas, examples, and FAQs." />
   <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/finance.html" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -13,7 +13,7 @@
     <div class="container">
       <a href="index.html" class="logo">CalcHub</a>
       <nav>
-        <a href="finance.html">Finance</a>
+        <a href="finance.html" class="active">Finance</a>
         <a href="health.html">Health</a>
         <a href="business.html">Business</a>
         <a href="realestate.html">Real Estate</a>
@@ -27,105 +27,20 @@
   </header>
 
   <main class="container">
-    <a href="index.html" class="back-link">← All calculators</a>
+    <section class="cat-header">
+      <h1>Finance Calculators</h1>
+      <p>Mortgage, loan, and savings calculators. Click any card to open.</p>
+    </section>
 
-    <section class="calc-page">
-      <h1>Mortgage Payment Calculator</h1>
-      <p class="intro">
-        Use this mortgage payment calculator to estimate your monthly principal and interest payment,
-        the total interest paid over the life of the loan, and the total cost of the mortgage.
-        Enter your loan amount, annual interest rate, and loan term in years. The calculator assumes
-        a fixed-rate mortgage with monthly payments and does not include property taxes, homeowners
-        insurance, HOA fees, or PMI — add those separately for a full monthly housing cost picture.
-      </p>
-
-      <div class="field">
-        <label for="loan">Loan amount ($)</label>
-        <input type="number" id="loan" placeholder="300000" min="0" />
-      </div>
-      <div class="field">
-        <label for="rate">Annual interest rate (%)</label>
-        <input type="number" id="rate" placeholder="6.5" step="0.01" min="0" />
-      </div>
-      <div class="field">
-        <label for="years">Loan term (years)</label>
-        <input type="number" id="years" placeholder="30" min="1" />
-      </div>
-
-      <button class="btn" data-calc="calcMortgage">Calculate</button>
-      <button class="btn btn-secondary" data-reset>Reset</button>
-
-      <h2>Worked example</h2>
-      <div class="example-box">
-        <p><strong>$300,000 loan at 6.5% for 30 years:</strong></p>
-        <ul>
-          <li>Monthly payment: <strong>$1,896.20</strong></li>
-          <li>Total paid over 30 years: <strong>$682,632</strong></li>
-          <li>Total interest: <strong>$382,632</strong></li>
-        </ul>
-        <p>Roughly 56% of what you pay over the life of this loan is interest.</p>
-      </div>
-
-      <h2>Assumptions and limitations</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Fixed interest rate for the entire loan term</li>
-          <li>Monthly compounding; payments made at the end of each month</li>
-          <li>Does not include property tax, homeowners insurance, PMI, HOA, or closing costs</li>
-          <li>Does not account for extra payments, biweekly payments, or refinancing</li>
-          <li>Results are estimates for planning, not a lender quote</li>
-        </ul>
-      </div>
-
-      <h2>How the calculation works</h2>
-      <div class="formula-box">
-        <p><strong>Formula:</strong> M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1)</p>
-        <p>Where <strong>P</strong> is the loan principal, <strong>r</strong> is the monthly interest rate
-        (annual rate ÷ 12), and <strong>n</strong> is the total number of monthly payments (years × 12).
-        This is the standard amortization formula used by lenders for fixed-rate mortgages.</p>
-      </div>
-
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>Does this include property taxes and insurance?</h3>
-        <p>No. This calculator shows principal and interest only. To estimate your full monthly payment,
-        add your annual property tax and homeowners insurance, divide by 12, and add that to the result.
-        PMI and HOA dues should be added the same way if they apply.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What is the difference between interest rate and APR?</h3>
-        <p>The interest rate is what you pay on the outstanding loan balance. APR includes the interest
-        rate plus lender fees and points, so it is usually higher. APR is better for comparing loan
-        offers; the interest rate drives your monthly payment calculation.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How does a 15-year term compare to 30 years?</h3>
-        <p>A 15-year loan has a higher monthly payment but roughly half the total interest of a 30-year
-        loan at the same rate. Change the loan term in the calculator above to compare both scenarios
-        side by side.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Will extra payments reduce my total interest?</h3>
-        <p>Yes. Any extra principal payment shortens the loan and reduces total interest. This calculator
-        assumes no extra payments; for an extra-payment scenario, use an amortization calculator or ask
-        your lender for a payoff schedule.</p>
-      </div>
-
-      <div class="related">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="realestate.html">Rental Yield Calculator</a></li>
-          <li><a href="business.html">Profit Margin Calculator</a></li>
-          <li><a href="math.html">Percentage Calculator</a></li>
-          <li><a href="converter.html">Unit Converter</a></li>
-        </ul>
-      </div>
-
-      <div class="meta">
-        <p><strong>Last updated:</strong> November 2026</p>
-        <p><strong>Sources:</strong> Consumer Financial Protection Bureau (CFPB) mortgage guidance; standard fixed-rate amortization formula.</p>
-        <p>This calculator is for informational purposes only and is not financial advice. Consult a licensed mortgage professional for a lender quote.</p>
-      </div>
+    <section class="grid">
+      <a class="card" href="calculators/mortgage.html">
+        <h2>Mortgage Payment Calculator</h2>
+        <p>Estimate monthly principal &amp; interest, total interest, and total cost of a fixed-rate mortgage.</p>
+      </a>
+      <a class="card" href="calculators/compound-interest.html">
+        <h2>Compound Interest Calculator</h2>
+        <p>See how a lump-sum investment grows with monthly, quarterly, or annual compounding.</p>
+      </a>
     </section>
   </main>
 
@@ -134,6 +49,5 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script src="js/mortgage.js"></script>
 </body>
 </html>
