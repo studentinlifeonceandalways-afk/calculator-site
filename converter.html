@@ -1,75 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unit Converter — CalcHub</title>
-    <meta
-      name="description"
-      content="Convert length, weight, and temperature units."
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a href="index.html" class="logo">CalcHub</a>
-        <nav>
-          <a href="finance.html">Finance</a>
-          <a href="health.html">Health</a>
-          <a href="business.html">Business</a>
-          <a href="realestate.html">Real Estate</a>
-          <a href="construction.html">Construction</a>
-          <a href="math.html">Math</a>
-          <a href="date.html">Date</a>
-          <a href="converter.html">Converter</a>
-          <a href="food.html">Food</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter — Length, Weight, and Temperature | CalcHub</title>
+  <meta name="description" content="Free unit converter for length, weight, and temperature. Convert meters, feet, miles, kilograms, pounds, Celsius, Fahrenheit, and more. Includes example and FAQs." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/converter.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="finance.html">Finance</a>
+        <a href="health.html">Health</a>
+        <a href="business.html">Business</a>
+        <a href="realestate.html">Real Estate</a>
+        <a href="construction.html">Construction</a>
+        <a href="math.html">Math</a>
+        <a href="date.html">Date</a>
+        <a href="converter.html">Converter</a>
+        <a href="food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">← All calculators</a>
+
+    <section class="calc-page">
+      <h1>Unit Converter</h1>
+      <p class="intro">
+        Use this unit converter to convert between common length, weight, and temperature units.
+        Select a category, enter a value, and choose the "from" and "to" units. Conversions use
+        standard international definitions and are accurate to six decimal places.
+      </p>
+
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="length">Length</option>
+          <option value="weight">Weight</option>
+          <option value="temp">Temperature</option>
+        </select>
       </div>
-    </header>
-
-    <main class="container">
-      <a href="index.html" class="back-link">← All calculators</a>
-
-      <section class="calc-page">
-        <h1>Unit Converter</h1>
-        <p class="intro">Convert length, weight, and temperature.</p>
-
-        <div class="field">
-          <label for="category">Category</label>
-          <select id="category">
-            <option value="length">Length</option>
-            <option value="weight">Weight</option>
-            <option value="temp">Temperature</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="value">Value</label>
-          <input type="number" id="value" placeholder="1" step="0.0001" />
-        </div>
-        <div class="field">
-          <label for="from">From</label>
-          <select id="from"></select>
-        </div>
-        <div class="field">
-          <label for="to">To</label>
-          <select id="to"></select>
-        </div>
-
-        <button class="btn" data-calc="calcUnit">Convert</button>
-        <button class="btn btn-secondary" data-reset>Reset</button>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>
-          © <span id="year"></span> CalcHub. For informational purposes only.
-        </p>
+      <div class="field">
+        <label for="value">Value</label>
+        <input type="number" id="value" placeholder="1" step="0.0001" />
       </div>
-    </footer>
+      <div class="field">
+        <label for="from">From</label>
+        <select id="from"></select>
+      </div>
+      <div class="field">
+        <label for="to">To</label>
+        <select id="to"></select>
+      </div>
 
-    <script src="js/common.js"></script>
-    <script src="js/unit.js"></script>
-  </body>
+      <button class="btn" data-calc="calcUnit">Convert</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>1 mile to kilometers:</strong></p>
+        <ul>
+          <li>Result: <strong>1.609344 km</strong></li>
+        </ul>
+        <p>1 mile is defined as exactly 1,609.344 meters.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Length conversions use international definitions (e.g., 1 inch = 25.4 mm)</li>
+          <li>Weight conversions use avoirdupois weight (e.g., 1 lb = 0.45359237 kg)</li>
+          <li>Temperature conversions use exact Celsius/Fahrenheit/Kelvin relationships</li>
+          <li>Rounding to six decimal places; very large or very small values may show rounding artifacts</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Length and weight:</strong> value × factor(from) ÷ factor(to), where factors are in base units (meters, kilograms).</p>
+        <p><strong>Temperature:</strong> convert to Celsius first, then to the target unit using the standard formulas.</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is the difference between mass and weight?</h3>
+        <p>Strictly, mass is the amount of matter (kg), while weight is the force of gravity on it
+        (newtons). In everyday use, "weight" in pounds or kilograms is treated as mass, which is what
+        this converter uses.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is a US gallon the same as a UK gallon?</h3>
+        <p>No. A US gallon is 3.785 liters; a UK (imperial) gallon is 4.546 liters. This converter does
+        not currently include volume units.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How accurate are the conversions?</h3>
+        <p>Length and weight conversions use exact defined factors and are accurate to the precision of
+        floating-point math. Temperature conversions are exact within the same limits.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="construction.html">Concrete Volume Calculator</a></li>
+          <li><a href="food.html">Recipe Scaler</a></li>
+          <li><a href="health.html">BMI Calculator</a></li>
+          <li><a href="math.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> NIST Handbook 44 and international unit definitions.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/unit.js"></script>
+</body>
 </html>
