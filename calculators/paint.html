@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paint Calculator — Gallons for a Room | CalcHub</title>
+  <meta name="description" content="Free paint calculator. Estimate wall area, subtract openings, and find gallons of paint for 1 or 2 coats." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/paint.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html" class="active">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../construction.html">Construction</a> <span>›</span>
+      <span>Paint Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Paint Calculator</h1>
+      <p class="intro">
+        Use this paint calculator to estimate how many gallons of paint you need for a room. Enter
+        length, width, wall height, number of doors and windows, and number of coats. It assumes
+        standard coverage of 350 square feet per gallon, typical for interior latex paint on a
+        primed surface.
+      </p>
+
+      <div class="field">
+        <label for="length">Room length (ft)</label>
+        <input type="number" id="length" placeholder="12" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="width">Room width (ft)</label>
+        <input type="number" id="width" placeholder="10" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="height">Wall height (ft)</label>
+        <input type="number" id="height" placeholder="8" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="doors">Number of doors (21 sq ft each)</label>
+        <input type="number" id="doors" placeholder="1" min="0" step="1" />
+      </div>
+      <div class="field">
+        <label for="windows">Number of windows (15 sq ft each)</label>
+        <input type="number" id="windows" placeholder="2" min="0" step="1" />
+      </div>
+      <div class="field">
+        <label for="coats">Number of coats</label>
+        <select id="coats">
+          <option value="1">1 coat</option>
+          <option value="2" selected>2 coats</option>
+        </select>
+      </div>
+
+      <button class="btn" data-calc="calcPaint">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>12×10 room, 8 ft walls, 1 door, 2 windows, 2 coats:</strong></p>
+        <ul>
+          <li>Gross wall area: <strong>352 sq ft</strong></li>
+          <li>Paintable area: <strong>301 sq ft</strong></li>
+          <li>Total for 2 coats: <strong>602 sq ft</strong></li>
+          <li>Gallons: <strong>2</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Standard coverage: 350 sq ft per gallon</li>
+          <li>Door ≈ 21 sq ft; window ≈ 15 sq ft</li>
+          <li>Does not include ceiling or trim</li>
+          <li>Round up to whole gallons</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Wall area</strong> = 2 × (L + W) × H</p>
+        <p><strong>Paintable</strong> = Wall area − (Doors × 21) − (Windows × 15)</p>
+        <p><strong>Gallons</strong> = (Paintable × Coats) ÷ 350</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>How much area does a gallon of paint cover?</h3>
+        <p>Most interior latex paints cover 350–400 sq ft per gallon per coat on smooth, primed
+        surfaces.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I include the ceiling?</h3>
+        <p>This calculator covers walls only. Add Length × Width for ceilings separately.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why buy extra paint?</h3>
+        <p>Buying 10% extra is common to allow for touch-ups and avoid running out mid-job.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="concrete.html">Concrete Volume Calculator</a></li>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard interior paint coverage of 350 sq ft/gallon.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/paint.js"></script>
+</body>
+</html>
