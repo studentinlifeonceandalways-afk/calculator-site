@@ -1,9 +1,7 @@
 // Common utilities shared across all calculators
-
 (function () {
   'use strict';
 
-  // ---------- Helpers exposed globally ----------
   window.num = function (id) {
     var el = document.getElementById(id);
     if (!el) throw new Error('Missing input element: #' + id);
@@ -13,11 +11,7 @@
   };
 
   window.money = function (n) {
-    return n.toLocaleString('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 2
-    });
+    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
   };
 
   window.round = function (n, dp) {
@@ -32,14 +26,12 @@
     if (!result) {
       result = document.createElement('div');
       result.className = 'result';
-      // insert right after the buttons, before .notes
-      var notes = page.querySelector('.notes');
-      if (notes) page.insertBefore(result, notes);
+      var anchor = page.querySelector('.example-box') || page.querySelector('.notes') || page.querySelector('h2');
+      if (anchor) page.insertBefore(result, anchor);
       else page.appendChild(result);
     }
     result.textContent = text;
     result.classList.add('show');
-
     if (isError) {
       result.style.background = '#fef2f2';
       result.style.borderColor = '#fecaca';
@@ -51,27 +43,22 @@
     }
   };
 
-  // ---------- Wiring ----------
   function wire() {
-    // Footer year
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Calculate buttons
-    var calcButtons = document.querySelectorAll('[data-calc]');
-    calcButtons.forEach(function (btn) {
+    document.querySelectorAll('[data-calc]').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         var name = btn.getAttribute('data-calc');
         var fn = window[name];
         if (typeof fn !== 'function') {
-          showResult(btn, 'Error: calculator "' + name + '" is not loaded. Check that js/' + name.toLowerCase().replace('calc', '') + '.js is included.', true);
+          showResult(btn, 'Error: calculator "' + name + '" not loaded.', true);
           console.error('Missing global function:', name);
           return;
         }
         try {
-          var result = fn();
-          showResult(btn, result, false);
+          showResult(btn, fn(), false);
         } catch (err) {
           console.error(err);
           showResult(btn, 'Error: ' + err.message, true);
@@ -79,9 +66,7 @@
       });
     });
 
-    // Reset buttons
-    var resetButtons = document.querySelectorAll('[data-reset]');
-    resetButtons.forEach(function (btn) {
+    document.querySelectorAll('[data-reset]').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         var page = btn.closest('.calc-page');
@@ -99,9 +84,6 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wire);
-  } else {
-    wire(); // DOM already parsed
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
 })();
