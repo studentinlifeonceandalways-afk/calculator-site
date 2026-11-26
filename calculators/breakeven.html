@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Break-Even Calculator — Units and Revenue | CalcHub</title>
+  <meta name="description" content="Free break-even calculator. Find units and revenue needed to cover fixed costs." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/breakeven.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html" class="active">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../business.html">Business</a> <span>›</span>
+      <span>Break-Even Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Break-Even Calculator</h1>
+      <p class="intro">
+        Use this break-even calculator to find the number of units you must sell, and the revenue
+        required, to cover total costs. Break-even is where total revenue equals total costs — profit
+        is zero at that point. Enter fixed costs, variable cost per unit, and selling price per unit.
+        Above break-even, each sale contributes to profit at the contribution margin.
+      </p>
+
+      <div class="field">
+        <label for="fixed">Fixed costs ($)</label>
+        <input type="number" id="fixed" placeholder="10000" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="varCost">Variable cost per unit ($)</label>
+        <input type="number" id="varCost" placeholder="20" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="price">Selling price per unit ($)</label>
+        <input type="number" id="price" placeholder="50" min="0" step="0.01" />
+      </div>
+
+      <button class="btn" data-calc="calcBreakeven">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>$10,000 fixed, $20 variable, $50 price:</strong></p>
+        <ul>
+          <li>Contribution margin: <strong>$30</strong></li>
+          <li>Break-even units: <strong>334</strong></li>
+          <li>Break-even revenue: <strong>$16,700</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Fixed costs stay constant across the relevant range of output</li>
+          <li>Variable cost and selling price are constant</li>
+          <li>Selling price must exceed variable cost, or break-even is impossible</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Contribution margin</strong> = Price − Variable cost</p>
+        <p><strong>Break-even units</strong> = Fixed costs ÷ Contribution margin</p>
+        <p><strong>Break-even revenue</strong> = Units × Price</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What counts as fixed vs variable cost?</h3>
+        <p>Fixed costs don't change with volume — rent, salaries. Variable costs rise with each unit —
+        materials, packaging.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if my selling price is below variable cost?</h3>
+        <p>Break-even is impossible — every sale loses money. The calculator will show an error.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I include target profit?</h3>
+        <p>Add target profit to fixed costs: units = (Fixed + Target profit) ÷ Contribution margin.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="profit-margin.html">Profit Margin Calculator</a></li>
+          <li><a href="mortgage.html">Mortgage Payment Calculator</a></li>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard managerial accounting break-even analysis.</p>
+        <p>This calculator is for informational purposes only and is not business advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/breakeven.js"></script>
+</body>
+</html>
