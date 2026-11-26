@@ -1,59 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Age Calculator — CalcHub</title>
-    <meta
-      name="description"
-      content="Calculate exact age in years, months, and days from a birth date."
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a href="index.html" class="logo">CalcHub</a>
-        <nav>
-          <a href="finance.html">Finance</a>
-          <a href="health.html">Health</a>
-          <a href="business.html">Business</a>
-          <a href="realestate.html">Real Estate</a>
-          <a href="construction.html">Construction</a>
-          <a href="math.html">Math</a>
-          <a href="date.html">Date</a>
-          <a href="converter.html">Converter</a>
-          <a href="food.html">Food</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator — Exact Age in Years, Months, and Days | CalcHub</title>
+  <meta name="description" content="Free age calculator. Calculate exact age in years, months, and days from a date of birth, plus total months and total days. Includes example and FAQs." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/date.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="finance.html">Finance</a>
+        <a href="health.html">Health</a>
+        <a href="business.html">Business</a>
+        <a href="realestate.html">Real Estate</a>
+        <a href="construction.html">Construction</a>
+        <a href="math.html">Math</a>
+        <a href="date.html">Date</a>
+        <a href="converter.html">Converter</a>
+        <a href="food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">← All calculators</a>
+
+    <section class="calc-page">
+      <h1>Age Calculator</h1>
+      <p class="intro">
+        Use this age calculator to find exact age in years, months, and days from a date of birth to
+        today. It also shows total months and total days. Useful for forms, anniversaries, and
+        eligibility checks where exact age matters.
+      </p>
+
+      <div class="field">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" />
       </div>
-    </header>
 
-    <main class="container">
-      <a href="index.html" class="back-link">← All calculators</a>
+      <button class="btn" data-calc="calcAge">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
 
-      <section class="calc-page">
-        <h1>Age Calculator</h1>
-        <p class="intro">Calculate exact age from a birth date.</p>
-
-        <div class="field">
-          <label for="dob">Date of birth</label>
-          <input type="date" id="dob" />
-        </div>
-
-        <button class="btn" data-calc="calcAge">Calculate</button>
-        <button class="btn btn-secondary" data-reset>Reset</button>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>
-          © <span id="year"></span> CalcHub. For informational purposes only.
-        </p>
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>Born May 10, 1990; today November 23, 2026:</strong></p>
+        <ul>
+          <li>Exact age: <strong>36 years, 6 months, 13 days</strong></li>
+          <li>Total months: <strong>438</strong></li>
+          <li>Total days: <strong>13,346</strong></li>
+        </ul>
       </div>
-    </footer>
 
-    <script src="js/common.js"></script>
-    <script src="js/age.js"></script>
-  </body>
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Uses the local time zone of your device</li>
+          <li>Treats dates at midnight; leap years are handled automatically</li>
+          <li>Months are counted as calendar months, not fixed 30-day periods</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p>The calculator subtracts the birth date from today's date in calendar units:
+        years first, then months, then days, borrowing from the previous month when the day
+        difference is negative.</p>
+        <p>Total days is the exact difference between the two dates in days.</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Does this account for leap years?</h3>
+        <p>Yes. Leap years are handled automatically because the calculation uses real calendar dates.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why does the "months" count sometimes differ from a simple division?</h3>
+        <p>Calendar months vary in length. This calculator counts full calendar months between the two
+        dates, which is how age is typically described on official forms.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I calculate age on a future date?</h3>
+        <p>Not with this version — it calculates age as of today. Future-date age is typically used for
+        eligibility or retirement planning and requires a different calculator.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="health.html">BMI Calculator</a></li>
+          <li><a href="finance.html">Mortgage Payment Calculator</a></li>
+          <li><a href="math.html">Percentage Calculator</a></li>
+          <li><a href="converter.html">Unit Converter</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard Gregorian calendar date arithmetic.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/age.js"></script>
+</body>
 </html>
