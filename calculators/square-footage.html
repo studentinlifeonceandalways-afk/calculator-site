@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Square Footage Calculator — Area from Length and Width | CalcHub</title>
+  <meta name="description" content="Free square footage calculator. Calculate square feet and square yards from length and width in feet." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/square-footage.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html" class="active">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../construction.html">Construction</a> <span>›</span>
+      <span>Square Footage Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Square Footage Calculator</h1>
+      <p class="intro">
+        Use this square footage calculator to find the area of a rectangular space from its length
+        and width in feet. It returns square feet and square yards, useful for flooring, paint,
+        sod, and rental listings. For irregular rooms, break the space into rectangles, calculate
+        each one, and add the results.
+      </p>
+
+      <div class="field">
+        <label for="length">Length (ft)</label>
+        <input type="number" id="length" placeholder="12" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="width">Width (ft)</label>
+        <input type="number" id="width" placeholder="10" min="0" step="0.1" />
+      </div>
+
+      <button class="btn" data-calc="calcSquareFootage">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>12 ft × 10 ft room:</strong></p>
+        <ul>
+          <li>Square feet: <strong>120 sq ft</strong></li>
+          <li>Square yards: <strong>13.33 sq yd</strong></li>
+        </ul>
+        <p>For flooring, add 5–10% for waste and cuts.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Rectangular shape only; for L-shapes or irregular rooms, split into rectangles</li>
+          <li>Does not subtract built-ins, columns, or alcoves</li>
+          <li>Does not include waste factor — add 5–10% for materials</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Square feet</strong> = Length (ft) × Width (ft)</p>
+        <p><strong>Square yards</strong> = Square feet ÷ 9</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>How do I measure an irregular room?</h3>
+        <p>Divide the room into rectangles, calculate the square footage of each, and sum them. For
+        rooms with alcoves or bays, treat each section separately.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How many square feet is a 12x12 room?</h3>
+        <p>144 square feet. 12 × 12 = 144. That's 16 square yards.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much extra should I buy for flooring?</h3>
+        <p>Add 5–10% for standard layouts, 10–15% for diagonal or herringbone patterns, and more for
+        rooms with many corners or offsets.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="paint.html">Paint Calculator</a></li>
+          <li><a href="concrete.html">Concrete Volume Calculator</a></li>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard imperial area conversions (1 sq yd = 9 sq ft).</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/square-footage.js"></script>
+</body>
+</html>
