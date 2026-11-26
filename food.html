@@ -1,79 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Scaler — CalcHub</title>
-    <meta
-      name="description"
-      content="Scale recipe ingredient quantities up or down."
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a href="index.html" class="logo">CalcHub</a>
-        <nav>
-          <a href="finance.html">Finance</a>
-          <a href="health.html">Health</a>
-          <a href="business.html">Business</a>
-          <a href="realestate.html">Real Estate</a>
-          <a href="construction.html">Construction</a>
-          <a href="math.html">Math</a>
-          <a href="date.html">Date</a>
-          <a href="converter.html">Converter</a>
-          <a href="food.html">Food</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Scaler — Scale Ingredient Quantities | CalcHub</title>
+  <meta name="description" content="Free recipe scaler. Scale ingredient quantities up or down based on original and new serving sizes. Includes formula, example, and FAQs." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/food.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="finance.html">Finance</a>
+        <a href="health.html">Health</a>
+        <a href="business.html">Business</a>
+        <a href="realestate.html">Real Estate</a>
+        <a href="construction.html">Construction</a>
+        <a href="math.html">Math</a>
+        <a href="date.html">Date</a>
+        <a href="converter.html">Converter</a>
+        <a href="food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">← All calculators</a>
+
+    <section class="calc-page">
+      <h1>Recipe Scaler</h1>
+      <p class="intro">
+        Use this recipe scaler to adjust an ingredient quantity when you change the number of servings
+        a recipe makes. Enter the original quantity, the original serving count, and the new serving
+        count. The calculator returns the scaled quantity and the scale factor. Works for any unit —
+        grams, cups, tablespoons — because it only scales the number.
+      </p>
+
+      <div class="field">
+        <label for="qty">Original quantity</label>
+        <input type="number" id="qty" placeholder="2" step="0.01" min="0" />
       </div>
-    </header>
-
-    <main class="container">
-      <a href="index.html" class="back-link">← All calculators</a>
-
-      <section class="calc-page">
-        <h1>Recipe Scaler</h1>
-        <p class="intro">Scale a recipe’s ingredient quantity.</p>
-
-        <div class="field">
-          <label for="qty">Original quantity</label>
-          <input type="number" id="qty" placeholder="2" step="0.01" min="0" />
-        </div>
-        <div class="field">
-          <label for="origServ">Original servings</label>
-          <input
-            type="number"
-            id="origServ"
-            placeholder="4"
-            step="0.1"
-            min="0"
-          />
-        </div>
-        <div class="field">
-          <label for="newServ">New servings</label>
-          <input
-            type="number"
-            id="newServ"
-            placeholder="6"
-            step="0.1"
-            min="0"
-          />
-        </div>
-
-        <button class="btn" data-calc="calcRecipe">Calculate</button>
-        <button class="btn btn-secondary" data-reset>Reset</button>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>
-          © <span id="year"></span> CalcHub. For informational purposes only.
-        </p>
+      <div class="field">
+        <label for="origServ">Original servings</label>
+        <input type="number" id="origServ" placeholder="4" step="0.1" min="0" />
       </div>
-    </footer>
+      <div class="field">
+        <label for="newServ">New servings</label>
+        <input type="number" id="newServ" placeholder="6" step="0.1" min="0" />
+      </div>
 
-    <script src="js/common.js"></script>
-    <script src="js/recipe.js"></script>
-  </body>
+      <button class="btn" data-calc="calcRecipe">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>2 cups for 4 servings, scaled to 6 servings:</strong></p>
+        <ul>
+          <li>Scale factor: <strong>1.5×</strong></li>
+          <li>New quantity: <strong>3 cups</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Assumes the recipe scales linearly — true for most ingredients</li>
+          <li>Does not adjust for evaporation, pan size, or leavening agents, which often need separate adjustment</li>
+          <li>Does not handle unit conversion — use the Unit Converter for that</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Scale factor</strong> = New servings ÷ Original servings</p>
+        <p><strong>New quantity</strong> = Original quantity × Scale factor</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Do all ingredients scale the same way?</h3>
+        <p>No. Salt, spices, leavening agents (baking powder, yeast), and alcohol often need less than
+        a linear scale-up. For baking especially, adjust these manually and check texture as you go.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I scale a recipe down?</h3>
+        <p>Yes. Enter a new serving count smaller than the original and the scale factor will be below 1.
+        Very small batches may need extra care with leavening and pan size.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this convert cups to grams?</h3>
+        <p>No. This scales the number only. Use the Unit Converter for unit-to-unit conversion, and
+        note that cup-to-gram conversion depends on the ingredient's density.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="converter.html">Unit Converter</a></li>
+          <li><a href="health.html">BMI Calculator</a></li>
+          <li><a href="math.html">Percentage Calculator</a></li>
+          <li><a href="business.html">Profit Margin Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard culinary scaling ratios.</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/recipe.js"></script>
+</body>
 </html>
