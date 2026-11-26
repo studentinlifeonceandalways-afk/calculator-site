@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent vs Buy Calculator — Compare Monthly Cost | CalcHub</title>
+  <meta name="description" content="Free rent vs buy calculator. Compare monthly rent to monthly ownership cost including mortgage, tax, and maintenance." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/rent-vs-buy.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html" class="active">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../realestate.html">Real Estate</a> <span>›</span>
+      <span>Rent vs Buy Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Rent vs Buy Calculator</h1>
+      <p class="intro">
+        Use this rent vs buy calculator to compare the monthly cost of renting with the monthly cost
+        of owning a home. It estimates ownership cost from mortgage principal and interest, property
+        tax, insurance, and a maintenance allowance, then compares it to rent. This is a simplified
+        comparison — it does not include closing costs, tax deductions, or home appreciation.
+      </p>
+
+      <div class="field">
+        <label for="rent">Monthly rent ($)</label>
+        <input type="number" id="rent" placeholder="2000" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="price">Home price ($)</label>
+        <input type="number" id="price" placeholder="400000" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="down">Down payment (%)</label>
+        <input type="number" id="down" placeholder="20" min="0" max="100" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="rate">Mortgage rate (%)</label>
+        <input type="number" id="rate" placeholder="6.5" min="0" step="0.01" />
+      </div>
+      <div class="field">
+        <label for="years">Loan term (years)</label>
+        <input type="number" id="years" placeholder="30" min="1" />
+      </div>
+      <div class="field">
+        <label for="tax">Annual property tax rate (%)</label>
+        <input type="number" id="tax" placeholder="1.2" min="0" step="0.01" />
+      </div>
+
+      <button class="btn" data-calc="calcRentBuy">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>$2,000 rent vs $400k home, 20% down, 6.5%, 30 years, 1.2% tax:</strong></p>
+        <ul>
+          <li>Monthly P&amp;I: <strong>$2,022.62</strong></li>
+          <li>Monthly tax: <strong>$400.00</strong></li>
+          <li>Monthly maint + insurance: <strong>$433.33</strong></li>
+          <li>Total ownership: <strong>$2,855.95</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Maintenance and insurance estimated at 1% and 0.3% of home price per year</li>
+          <li>Does not include closing costs, HOA, or PMI</li>
+          <li>Ignores tax deductions and home appreciation</li>
+          <li>Compares monthly cash cost only, not total wealth</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Loan</strong> = Price × (1 − Down%)</p>
+        <p><strong>P&amp;I</strong> = standard amortization formula</p>
+        <p><strong>Total</strong> = P&amp;I + (Price × tax%)/12 + (Price × 1.3%)/12</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Is this a complete rent vs buy analysis?</h3>
+        <p>No. It's a monthly cash-flow comparison. A full analysis should include opportunity cost
+        of the down payment, tax deductions, appreciation, and transaction costs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why does owning look more expensive here?</h3>
+        <p>Because it includes costs renters don't pay — tax, maintenance, insurance. It also builds
+        equity, which this comparison doesn't capture.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I put less than 20% down?</h3>
+        <p>You'll typically pay PMI (0.3–1.5% of loan per year), which this calculator does not include.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="mortgage.html">Mortgage Payment Calculator</a></li>
+          <li><a href="compound-interest.html">Compound Interest Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> CFPB homebuying guidance; standard amortization.</p>
+        <p>This calculator is for informational purposes only and is not financial advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/rent-vs-buy.js"></script>
+</body>
+</html>
