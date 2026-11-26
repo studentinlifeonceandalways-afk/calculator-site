@@ -2,7 +2,6 @@ window.calcMortgage = function () {
   var P = num('loan');
   var annualRate = num('rate');
   var years = num('years');
-
   if (P <= 0) throw new Error('Loan amount must be greater than 0');
   if (annualRate < 0) throw new Error('Interest rate cannot be negative');
   if (years <= 0) throw new Error('Loan term must be greater than 0');
