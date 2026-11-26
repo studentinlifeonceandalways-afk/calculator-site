@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Payment Calculator — Monthly Payment & Total Interest | CalcHub</title>
+  <meta name="description" content="Free mortgage payment calculator. Estimate monthly principal and interest, total interest, and total cost of a fixed-rate mortgage. Includes formula, example, and FAQs." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/mortgage.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html" class="active">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../finance.html">Finance</a> <span>›</span>
+      <span>Mortgage Payment Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Mortgage Payment Calculator</h1>
+      <p class="intro">
+        Use this mortgage payment calculator to estimate your monthly principal and interest payment,
+        the total interest paid over the life of the loan, and the total cost of the mortgage.
+        Enter your loan amount, annual interest rate, and loan term in years. The calculator assumes
+        a fixed-rate mortgage with monthly payments and does not include property taxes, homeowners
+        insurance, HOA fees, or PMI — add those separately for a full monthly housing cost picture.
+      </p>
+
+      <div class="field">
+        <label for="loan">Loan amount ($)</label>
+        <input type="number" id="loan" placeholder="300000" min="0" />
+      </div>
+      <div class="field">
+        <label for="rate">Annual interest rate (%)</label>
+        <input type="number" id="rate" placeholder="6.5" step="0.01" min="0" />
+      </div>
+      <div class="field">
+        <label for="years">Loan term (years)</label>
+        <input type="number" id="years" placeholder="30" min="1" />
+      </div>
+
+      <button class="btn" data-calc="calcMortgage">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>$300,000 loan at 6.5% for 30 years:</strong></p>
+        <ul>
+          <li>Monthly payment: <strong>$1,896.20</strong></li>
+          <li>Total paid over 30 years: <strong>$682,632</strong></li>
+          <li>Total interest: <strong>$382,632</strong></li>
+        </ul>
+        <p>Roughly 56% of what you pay over the life of this loan is interest.</p>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Fixed interest rate for the entire loan term</li>
+          <li>Monthly compounding; payments made at the end of each month</li>
+          <li>Does not include property tax, homeowners insurance, PMI, HOA, or closing costs</li>
+          <li>Does not account for extra payments, biweekly payments, or refinancing</li>
+          <li>Results are estimates for planning, not a lender quote</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Formula:</strong> M = P × r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup> − 1)</p>
+        <p>Where <strong>P</strong> is the loan principal, <strong>r</strong> is the monthly interest rate
+        (annual rate ÷ 12), and <strong>n</strong> is the total number of monthly payments (years × 12).</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>Does this include property taxes and insurance?</h3>
+        <p>No. This calculator shows principal and interest only. To estimate your full monthly payment,
+        add your annual property tax and homeowners insurance, divide by 12, and add that to the result.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the difference between interest rate and APR?</h3>
+        <p>The interest rate is what you pay on the outstanding loan balance. APR includes the interest
+        rate plus lender fees and points, so it is usually higher and better for comparing loan offers.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does a 15-year term compare to 30 years?</h3>
+        <p>A 15-year loan has a higher monthly payment but roughly half the total interest of a 30-year
+        loan at the same rate. Change the loan term above to compare both scenarios.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="compound-interest.html">Compound Interest Calculator</a></li>
+          <li><a href="rent-vs-buy.html">Rent vs Buy Calculator</a></li>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Consumer Financial Protection Bureau (CFPB) mortgage guidance; standard fixed-rate amortization formula.</p>
+        <p>This calculator is for informational purposes only and is not financial advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/mortgage.js"></script>
+</body>
+</html>
