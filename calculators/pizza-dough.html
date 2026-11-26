@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Dough Calculator — Flour, Water, Yeast, Salt | CalcHub</title>
+  <meta name="description" content="Free pizza dough calculator. Baker's percentage recipe: enter number of pizzas and dough ball weight, get flour, water, yeast, and salt amounts." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/pizza-dough.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html" class="active">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../food.html">Food</a> <span>›</span>
+      <span>Pizza Dough Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Pizza Dough Calculator</h1>
+      <p class="intro">
+        Use this pizza dough calculator to get exact flour, water, yeast, and salt amounts based on
+        baker's percentages. Enter the number of pizzas, the weight of each dough ball, and the
+        hydration percentage. Baker's percentage expresses every ingredient as a percentage of total
+        flour weight — 60% hydration means 60 g water for every 100 g flour. Standard Neapolitan-style
+        dough uses 60–65% hydration, 2.5–3% salt, and 0.2–0.5% yeast for a cold ferment.
+      </p>
+
+      <div class="field">
+        <label for="count">Number of pizzas</label>
+        <input type="number" id="count" placeholder="2" min="1" step="1" />
+      </div>
+      <div class="field">
+        <label for="ballWeight">Dough ball weight (g each)</label>
+        <input type="number" id="ballWeight" placeholder="250" min="50" step="10" />
+      </div>
+      <div class="field">
+        <label for="hydration">Hydration (%)</label>
+        <input type="number" id="hydration" placeholder="62" min="40" max="90" step="1" />
+      </div>
+      <div class="field">
+        <label for="salt">Salt (% of flour)</label>
+        <input type="number" id="salt" placeholder="2.5" min="0" max="5" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="yeast">Yeast (% of flour)</label>
+        <input type="number" id="yeast" placeholder="0.4" min="0" max="3" step="0.1" />
+      </div>
+
+      <button class="btn" data-calc="calcPizzaDough">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>2 pizzas, 250 g per ball, 62% hydration, 2.5% salt, 0.4% yeast:</strong></p>
+        <ul>
+          <li>Total dough: <strong>500 g</strong></li>
+          <li>Flour: <strong>302 g</strong></li>
+          <li>Water: <strong>187 g</strong></li>
+          <li>Salt: <strong>7.5 g</strong></li>
+          <li>Yeast: <strong>1.2 g</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Baker's percentage: flour = 100%, all other ingredients expressed as % of flour weight</li>
+          <li>Dough ball weight includes flour, water, salt, and yeast — not toppings</li>
+          <li>Yeast percentage assumes instant dry yeast for a 24–72 hour cold ferment</li>
+          <li>For same-day dough, use 1–2% yeast instead</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Total dough</strong> = Pizzas × Ball weight</p>
+        <p><strong>Flour</strong> = Total dough ÷ (1 + hydration/100 + salt/100 + yeast/100)</p>
+        <p><strong>Water</strong> = Flour × hydration/100</p>
+        <p><strong>Salt</strong> = Flour × salt/100</p>
+        <p><strong>Yeast</strong> = Flour × yeast/100</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What hydration should I use?</h3>
+        <p>60–65% for standard Neapolitan or New York style. 70–75% for a lighter, airier
+        neo-Neapolitan crust (harder to handle). 55–60% for cracker-thin or pan pizza. Higher
+        hydration produces a more open crumb.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much yeast for a cold ferment?</h3>
+        <p>0.2–0.5% instant dry yeast for 24–72 hours in the fridge. Same-day dough: 1–2%. The longer
+        the ferment, the less yeast you need.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How big should each dough ball be?</h3>
+        <p>For a 12-inch pizza: 250–280 g. For a 14-inch: 320–360 g. For 10-inch: 180–220 g. Smaller
+        balls for Neapolitan (200–250 g for 10–12 inch), larger for New York (350 g for 16-inch).</p>
+      </div>
+      <div class="faq-item">
+        <h3>What flour should I use?</h3>
+        <p>"00" flour for Neapolitan; bread flour (12–13% protein) for New York style; all-purpose
+        works for a softer, more home-style crust.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="recipe-scaler.html">Recipe Scaler</a></li>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="temperature.html">Temperature Converter</a></li>
+          <li><a href="calorie.html">Calorie (TDEE) Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard baker's percentage conventions (Rouxbe, King Arthur Baking).</p>
+        <p>This calculator is for informational purposes only.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/pizza-dough.js"></script>
+</body>
+</html>
