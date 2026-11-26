@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Fat Calculator — U.S. Navy Method | CalcHub</title>
+  <meta name="description" content="Free body fat calculator using the U.S. Navy circumference method. Estimate body fat percentage from height, neck, waist, and (for women) hip measurements." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/body-fat.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html" class="active">Health</a>
+        <a href="../business.html">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../health.html">Health</a> <span>›</span>
+      <span>Body Fat Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Body Fat Calculator</h1>
+      <p class="intro">
+        Use this body fat calculator to estimate body fat percentage using the U.S. Navy circumference
+        method. It uses height, neck, and waist measurements (plus hip circumference for women) to
+        estimate body fat without calipers or a DEXA scan. Accuracy is typically within ±3–4 percentage
+        points compared with clinical methods, making it useful for tracking trends over time rather
+        than one-off measurement.
+      </p>
+
+      <div class="field">
+        <label for="sex">Sex</label>
+        <select id="sex">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="175" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="neck">Neck circumference (cm)</label>
+        <input type="number" id="neck" placeholder="38" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="waist">Waist circumference (cm)</label>
+        <input type="number" id="waist" placeholder="85" min="0" step="0.1" />
+      </div>
+      <div class="field">
+        <label for="hip">Hip circumference (cm, women only)</label>
+        <input type="number" id="hip" placeholder="95" min="0" step="0.1" />
+      </div>
+
+      <button class="btn" data-calc="calcBodyFat">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>Male, 175 cm, neck 38 cm, waist 85 cm:</strong></p>
+        <ul>
+          <li>Estimated body fat: <strong>~17%</strong></li>
+          <li>Category: <strong>Fitness</strong></li>
+        </ul>
+        <p>Body fat categories vary by sex and age; the result should be read as a trend indicator.</p>
+      </div>
+
+      <h2>Body fat categories (approximate)</h2>
+      <div class="assumptions-box">
+        <p><strong>Men:</strong></p>
+        <ul>
+          <li>Essential: 2–5%</li>
+          <li>Athletic: 6–13%</li>
+          <li>Fitness: 14–17%</li>
+          <li>Average: 18–24%</li>
+          <li>Obese: 25%+</li>
+        </ul>
+        <p><strong>Women:</strong></p>
+        <ul>
+          <li>Essential: 10–13%</li>
+          <li>Athletic: 14–20%</li>
+          <li>Fitness: 21–24%</li>
+          <li>Average: 25–31%</li>
+          <li>Obese: 32%+</li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>Uses the U.S. Navy circumference formula; accuracy is ±3–4 percentage points</li>
+          <li>Measurements must be taken at correct anatomical locations (neck at narrowest, waist at navel)</li>
+          <li>Less accurate for very muscular or very obese individuals</li>
+          <li>Not a clinical measurement; DEXA or hydrostatic weighing are more accurate</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Men:</strong> %BF = 495 ÷ (1.0324 − 0.19077×log<sub>10</sub>(waist − neck) + 0.15456×log<sub>10</sub>(height)) − 450</p>
+        <p><strong>Women:</strong> %BF = 495 ÷ (1.29579 − 0.35004×log<sub>10</sub>(waist + hip − neck) + 0.22100×log<sub>10</sub>(height)) − 450</p>
+        <p>All measurements in centimeters.</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>How accurate is the Navy method?</h3>
+        <p>Typically within ±3–4% of DEXA. It's better for tracking changes over time than for
+        absolute measurement. Take measurements consistently — same time of day, same tape tension.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where exactly should I measure?</h3>
+        <p>Neck: narrowest point below the larynx. Waist: at the navel for men, at the narrowest point
+        for women. Hip: widest point of the buttocks. Keep the tape level and snug but not compressing
+        the skin.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why do men and women have different formulas?</h3>
+        <p>Men and women store fat differently (women carry more subcutaneous fat, particularly around
+        hips and thighs), so the circumference-based regression is sex-specific.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="bmi.html">BMI Calculator</a></li>
+          <li><a href="calorie.html">Calorie (TDEE) Calculator</a></li>
+          <li><a href="unit-converter.html">Unit Converter</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Hodgdon JA, Beckett MB (1984), Naval Health Research Center — U.S. Navy circumference method.</p>
+        <p>This calculator is for informational purposes only and is not medical advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/body-fat.js"></script>
+</body>
+</html>
