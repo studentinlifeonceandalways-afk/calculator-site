@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Percentage Calculator — What Is X% of Y? | CalcHub</title>
-  <meta name="description" content="Free percentage calculator. Find what X percent of Y is, with formula, worked example, and FAQs. Fast and accurate." />
+  <title>Math Calculators — Percentage | CalcHub</title>
+  <meta name="description" content="Free math calculators: percentage of a number, percent change, and more everyday arithmetic tools." />
   <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/math.html" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -18,7 +18,7 @@
         <a href="business.html">Business</a>
         <a href="realestate.html">Real Estate</a>
         <a href="construction.html">Construction</a>
-        <a href="math.html">Math</a>
+        <a href="math.html" class="active">Math</a>
         <a href="date.html">Date</a>
         <a href="converter.html">Converter</a>
         <a href="food.html">Food</a>
@@ -27,86 +27,16 @@
   </header>
 
   <main class="container">
-    <a href="index.html" class="back-link">← All calculators</a>
+    <section class="cat-header">
+      <h1>Math Calculators</h1>
+      <p>Everyday math tools for percentages and arithmetic.</p>
+    </section>
 
-    <section class="calc-page">
-      <h1>Percentage Calculator</h1>
-      <p class="intro">
-        Use this percentage calculator to find what X percent of Y is. Enter the percentage and the
-        number, and the calculator returns the result. For percent change or percent increase/decrease,
-        see the formula and FAQ sections below.
-      </p>
-
-      <div class="field">
-        <label for="pct">Percentage (%)</label>
-        <input type="number" id="pct" placeholder="15" step="0.01" />
-      </div>
-      <div class="field">
-        <label for="of">Of number</label>
-        <input type="number" id="of" placeholder="200" step="0.01" />
-      </div>
-
-      <button class="btn" data-calc="calcPercent">Calculate</button>
-      <button class="btn btn-secondary" data-reset>Reset</button>
-
-      <h2>Worked example</h2>
-      <div class="example-box">
-        <p><strong>15% of 200:</strong></p>
-        <ul>
-          <li>Result: <strong>30</strong></li>
-        </ul>
-        <p>15 ÷ 100 = 0.15; 0.15 × 200 = 30.</p>
-      </div>
-
-      <h2>How the calculation works</h2>
-      <div class="formula-box">
-        <p><strong>X% of Y</strong> = (X ÷ 100) × Y</p>
-        <p><strong>Percent change</strong> = ((New − Old) ÷ Old) × 100</p>
-        <p><strong>Percent increase</strong> = ((New − Old) ÷ Old) × 100 (positive result)</p>
-        <p><strong>Percent decrease</strong> = ((Old − New) ÷ Old) × 100 (positive result)</p>
-      </div>
-
-      <h2>Assumptions and limitations</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Works for any real numbers, including decimals and negatives</li>
-          <li>Rounding is applied to 4 decimal places</li>
-          <li>Percent change formulas divide by the original value, so the original cannot be zero</li>
-        </ul>
-      </div>
-
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>How do I calculate percent change?</h3>
-        <p>Subtract the old value from the new value, divide by the old value, then multiply by 100.
-        If the result is positive it's an increase; if negative, a decrease.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What is the difference between percentage points and percent?</h3>
-        <p>A change from 10% to 12% is a 2 percentage point increase but a 20% relative increase
-        (2 ÷ 10). Use percentage points when comparing rates directly.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do I find the original number from a percentage?</h3>
-        <p>If X% of a number equals Y, the original number is Y ÷ (X ÷ 100). For example, if 15% of
-        a number is 30, the number is 30 ÷ 0.15 = 200.</p>
-      </div>
-
-      <div class="related">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="business.html">Profit Margin Calculator</a></li>
-          <li><a href="finance.html">Mortgage Payment Calculator</a></li>
-          <li><a href="realestate.html">Rental Yield Calculator</a></li>
-          <li><a href="food.html">Recipe Scaler</a></li>
-        </ul>
-      </div>
-
-      <div class="meta">
-        <p><strong>Last updated:</strong> November 2026</p>
-        <p><strong>Sources:</strong> Standard arithmetic percentage definitions.</p>
-        <p>This calculator is for informational purposes only.</p>
-      </div>
+    <section class="grid">
+      <a class="card" href="calculators/percentage.html">
+        <h2>Percentage Calculator</h2>
+        <p>Find what X% of Y is, with percent change and percent increase/decrease formulas.</p>
+      </a>
     </section>
   </main>
 
@@ -115,6 +45,5 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script src="js/percentage.js"></script>
 </body>
 </html>
