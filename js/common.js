@@ -1,4 +1,3 @@
-// Common utilities shared across all calculators
 (function () {
   'use strict';
 
@@ -26,7 +25,7 @@
     if (!result) {
       result = document.createElement('div');
       result.className = 'result';
-      var anchor = page.querySelector('.example-box') || page.querySelector('.notes') || page.querySelector('h2');
+      var anchor = page.querySelector('.example-box') || page.querySelector('h2');
       if (anchor) page.insertBefore(result, anchor);
       else page.appendChild(result);
     }
@@ -54,15 +53,10 @@
         var fn = window[name];
         if (typeof fn !== 'function') {
           showResult(btn, 'Error: calculator "' + name + '" not loaded.', true);
-          console.error('Missing global function:', name);
           return;
         }
-        try {
-          showResult(btn, fn(), false);
-        } catch (err) {
-          console.error(err);
-          showResult(btn, 'Error: ' + err.message, true);
-        }
+        try { showResult(btn, fn(), false); }
+        catch (err) { showResult(btn, 'Error: ' + err.message, true); }
       });
     });
 
@@ -76,10 +70,7 @@
           else el.value = '';
         });
         var result = page.querySelector('.result');
-        if (result) {
-          result.classList.remove('show');
-          result.textContent = '';
-        }
+        if (result) { result.classList.remove('show'); result.textContent = ''; }
       });
     });
   }
