@@ -39,13 +39,14 @@ body {
 .site-header nav { display: flex; gap: 1rem; flex-wrap: wrap; }
 .site-header nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
 .site-header nav a:hover { color: var(--accent); }
+.site-header nav a.active { color: var(--accent); font-weight: 600; }
 
 /* Hero */
 .hero { text-align: center; padding: 2.5rem 0 1.5rem; }
 .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 .hero p { color: var(--muted); }
 
-/* Cards */
+/* Card grid (used on homepage AND category hubs) */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -64,6 +65,24 @@ body {
 .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
 .card h2 { font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--accent); }
 .card p { font-size: 0.9rem; color: var(--muted); }
+.card .count {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #f1f5f9;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Category page header */
+.cat-header {
+  padding: 2rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.cat-header h1 { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.cat-header p { color: var(--muted); }
 
 /* Calculator page */
 .calc-page {
@@ -136,7 +155,6 @@ body {
   padding: 1rem 1.25rem;
   margin: 0.5rem 0 1rem;
 }
-.example-box strong, .assumptions-box strong, .formula-box strong { color: var(--text); }
 .assumptions-box ul { margin-bottom: 0; }
 
 .faq-item { margin-bottom: 1rem; }
@@ -166,13 +184,15 @@ body {
 }
 .meta p { margin-bottom: 0.3rem; }
 
-.back-link {
-  display: inline-block;
-  margin: 1rem 0;
-  color: var(--accent);
-  text-decoration: none;
+/* Breadcrumb */
+.breadcrumb {
   font-size: 0.9rem;
+  color: var(--muted);
+  margin: 1rem 0;
 }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { color: var(--muted); }
 
 /* Footer */
 .site-footer {
