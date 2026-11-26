@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profit Margin Calculator — Margin and Markup | CalcHub</title>
+  <meta name="description" content="Free profit margin calculator. Find profit, profit margin, and markup from cost and selling price." />
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/calculators/profit-margin.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">CalcHub</a>
+      <nav>
+        <a href="../finance.html">Finance</a>
+        <a href="../health.html">Health</a>
+        <a href="../business.html" class="active">Business</a>
+        <a href="../realestate.html">Real Estate</a>
+        <a href="../construction.html">Construction</a>
+        <a href="../math.html">Math</a>
+        <a href="../date.html">Date</a>
+        <a href="../converter.html">Converter</a>
+        <a href="../food.html">Food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span>
+      <a href="../business.html">Business</a> <span>›</span>
+      <span>Profit Margin Calculator</span>
+    </div>
+
+    <section class="calc-page">
+      <h1>Profit Margin Calculator</h1>
+      <p class="intro">
+        Use this profit margin calculator to find your gross profit, profit margin percentage, and
+        markup percentage from a product's cost and selling price. Profit margin tells you what share
+        of each sale is profit; markup tells you how much you added to cost. Both are useful for
+        pricing decisions, but they measure different things.
+      </p>
+
+      <div class="field">
+        <label for="cost">Cost ($)</label>
+        <input type="number" id="cost" placeholder="40" step="0.01" min="0" />
+      </div>
+      <div class="field">
+        <label for="price">Selling price ($)</label>
+        <input type="number" id="price" placeholder="100" step="0.01" min="0" />
+      </div>
+
+      <button class="btn" data-calc="calcProfit">Calculate</button>
+      <button class="btn btn-secondary" data-reset>Reset</button>
+
+      <h2>Worked example</h2>
+      <div class="example-box">
+        <p><strong>Cost $40, selling price $100:</strong></p>
+        <ul>
+          <li>Profit: <strong>$60</strong></li>
+          <li>Profit margin: <strong>60%</strong></li>
+          <li>Markup: <strong>150%</strong></li>
+        </ul>
+      </div>
+
+      <h2>Assumptions and limitations</h2>
+      <div class="assumptions-box">
+        <ul>
+          <li>"Cost" means direct cost (COGS); does not include overhead or shipping</li>
+          <li>Margin is calculated on revenue; markup is calculated on cost</li>
+          <li>Results are pre-tax</li>
+        </ul>
+      </div>
+
+      <h2>How the calculation works</h2>
+      <div class="formula-box">
+        <p><strong>Profit</strong> = Selling price − Cost</p>
+        <p><strong>Profit margin</strong> = (Profit ÷ Selling price) × 100</p>
+        <p><strong>Markup</strong> = (Profit ÷ Cost) × 100</p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What is the difference between margin and markup?</h3>
+        <p>Margin is profit as a percentage of the selling price. Markup is profit as a percentage of
+        cost. A 50% margin equals a 100% markup.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is a good profit margin?</h3>
+        <p>It varies by industry. Retail often runs 2–10%, software 70–90%, and services 20–40%.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I price based on margin or markup?</h3>
+        <p>Decide on a target margin first, then set price = cost ÷ (1 − margin). Markup is useful
+        when you start from cost.</p>
+      </div>
+
+      <div class="related">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="breakeven.html">Break-Even Calculator</a></li>
+          <li><a href="mortgage.html">Mortgage Payment Calculator</a></li>
+          <li><a href="rental-yield.html">Rental Yield Calculator</a></li>
+          <li><a href="percentage.html">Percentage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="meta">
+        <p><strong>Last updated:</strong> November 2026</p>
+        <p><strong>Sources:</strong> Standard managerial accounting definitions of margin and markup.</p>
+        <p>This calculator is for informational purposes only and is not business advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> CalcHub. For informational purposes only.</p></div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/profit.js"></script>
+</body>
+</html>
