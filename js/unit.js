@@ -43,6 +43,5 @@ window.calcUnit = function () {
     var base = value * factors[from];
     result = base / factors[to];
   }
-
   return value + ' ' + from + ' = ' + round(result, 6) + ' ' + to;
 };
