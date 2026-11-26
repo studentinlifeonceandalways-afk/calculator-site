@@ -1,26 +1,25 @@
-function calcMortgage() {
-  const P = num('loan');
-  const annualRate = num('rate');
-  const years = num('years');
+window.calcMortgage = function () {
+  var P = num('loan');
+  var annualRate = num('rate');
+  var years = num('years');
 
   if (P <= 0) throw new Error('Loan amount must be greater than 0');
   if (annualRate < 0) throw new Error('Interest rate cannot be negative');
   if (years <= 0) throw new Error('Loan term must be greater than 0');
 
-  const n = years * 12;
-  let monthly;
-
+  var n = years * 12;
+  var monthly;
   if (annualRate === 0) {
     monthly = P / n;
   } else {
-    const r = annualRate / 100 / 12;
-    monthly = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    var r = annualRate / 100 / 12;
+    var pow = Math.pow(1 + r, n);
+    monthly = P * r * pow / (pow - 1);
   }
-
-  const total = monthly * n;
-  const interest = total - P;
+  var total = monthly * n;
+  var interest = total - P;
 
   return 'Monthly payment: ' + money(monthly) +
          ' | Total paid: ' + money(total) +
          ' | Total interest: ' + money(interest);
-}
+};
