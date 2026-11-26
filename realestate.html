@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rental Yield Calculator — Gross and Net Yield | CalcHub</title>
-  <meta name="description" content="Free rental yield calculator. Calculate gross and net rental yield from property value, annual rent, and annual expenses. Includes formula, example, and FAQs." />
+  <title>Real Estate Calculators — Rental Yield, Rent vs Buy | CalcHub</title>
+  <meta name="description" content="Free real estate calculators: rental yield and rent vs buy comparisons for investment and home purchase decisions." />
   <link rel="canonical" href="https://YOURUSERNAME.github.io/calculator-site/realestate.html" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -16,7 +16,7 @@
         <a href="finance.html">Finance</a>
         <a href="health.html">Health</a>
         <a href="business.html">Business</a>
-        <a href="realestate.html">Real Estate</a>
+        <a href="realestate.html" class="active">Real Estate</a>
         <a href="construction.html">Construction</a>
         <a href="math.html">Math</a>
         <a href="date.html">Date</a>
@@ -27,92 +27,20 @@
   </header>
 
   <main class="container">
-    <a href="index.html" class="back-link">← All calculators</a>
+    <section class="cat-header">
+      <h1>Real Estate Calculators</h1>
+      <p>Property investment and home purchase tools.</p>
+    </section>
 
-    <section class="calc-page">
-      <h1>Rental Yield Calculator</h1>
-      <p class="intro">
-        Use this rental yield calculator to estimate the gross and net rental yield of an investment
-        property. Gross yield measures annual rent as a percentage of property value; net yield
-        subtracts operating expenses first. Both help you compare properties, but net yield is the
-        more realistic measure of return before financing costs.
-      </p>
-
-      <div class="field">
-        <label for="value">Property value ($)</label>
-        <input type="number" id="value" placeholder="350000" min="0" />
-      </div>
-      <div class="field">
-        <label for="rent">Annual rent ($)</label>
-        <input type="number" id="rent" placeholder="24000" min="0" />
-      </div>
-      <div class="field">
-        <label for="expenses">Annual expenses ($)</label>
-        <input type="number" id="expenses" placeholder="4000" min="0" />
-      </div>
-
-      <button class="btn" data-calc="calcYield">Calculate</button>
-      <button class="btn btn-secondary" data-reset>Reset</button>
-
-      <h2>Worked example</h2>
-      <div class="example-box">
-        <p><strong>$350,000 property, $24,000 annual rent, $4,000 annual expenses:</strong></p>
-        <ul>
-          <li>Gross yield: <strong>6.86%</strong></li>
-          <li>Net yield: <strong>5.71%</strong></li>
-          <li>Annual net income: <strong>$20,000</strong></li>
-        </ul>
-      </div>
-
-      <h2>Assumptions and limitations</h2>
-      <div class="assumptions-box">
-        <ul>
-          <li>Property value is the purchase price or current market value, not the loan amount</li>
-          <li>Expenses include taxes, insurance, maintenance, management, and vacancy — not mortgage payments</li>
-          <li>Does not account for capital appreciation, tax benefits, or financing costs</li>
-          <li>Assumes full-year occupancy unless vacancy is included in expenses</li>
-        </ul>
-      </div>
-
-      <h2>How the calculation works</h2>
-      <div class="formula-box">
-        <p><strong>Gross yield</strong> = (Annual rent ÷ Property value) × 100</p>
-        <p><strong>Net yield</strong> = ((Annual rent − Annual expenses) ÷ Property value) × 100</p>
-      </div>
-
-      <h2>Frequently asked questions</h2>
-      <div class="faq-item">
-        <h3>What is a good rental yield?</h3>
-        <p>It depends on the market. In many US markets, gross yields of 5–8% are considered reasonable
-        for residential rentals; high-cost cities often run lower. Net yield is the better comparison
-        metric across properties.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Should mortgage payments be included in expenses?</h3>
-        <p>No. Yield measures the property's return independent of how it is financed. Financing costs
-        affect cash flow, not yield. Use a separate cash-flow calculator for mortgage-adjusted returns.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Gross vs net yield — which should I use?</h3>
-        <p>Use gross yield for quick screening and net yield for serious comparison. Net yield accounts
-        for the real cost of operating the property and is closer to actual return.</p>
-      </div>
-
-      <div class="related">
-        <h2>Related calculators</h2>
-        <ul>
-          <li><a href="finance.html">Mortgage Payment Calculator</a></li>
-          <li><a href="business.html">Profit Margin Calculator</a></li>
-          <li><a href="construction.html">Concrete Volume Calculator</a></li>
-          <li><a href="math.html">Percentage Calculator</a></li>
-        </ul>
-      </div>
-
-      <div class="meta">
-        <p><strong>Last updated:</strong> November 2026</p>
-        <p><strong>Sources:</strong> Standard real estate investment yield definitions.</p>
-        <p>This calculator is for informational purposes only and is not investment advice.</p>
-      </div>
+    <section class="grid">
+      <a class="card" href="calculators/rental-yield.html">
+        <h2>Rental Yield Calculator</h2>
+        <p>Gross and net rental yield from property value, annual rent, and annual expenses.</p>
+      </a>
+      <a class="card" href="calculators/rent-vs-buy.html">
+        <h2>Rent vs Buy Calculator</h2>
+        <p>Compare monthly renting cost to monthly ownership cost including tax and maintenance.</p>
+      </a>
     </section>
   </main>
 
@@ -121,6 +49,5 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script src="js/rental.js"></script>
 </body>
 </html>
